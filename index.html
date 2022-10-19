@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+        
+        
+    </head>
+
+    <body>
+        <div id="header">
+
+            <ul id="nav">
+                <li>
+                    <a href="">
+                        Home
+                        <i class="nav-arrow-down ti-menu"></i>
+                    </a>
+                   <!-- <ul class="subnav">
+                        <li><a href="">Tài Khoản</a></li>
+                        <li><a href="">Cài Đặt Chung</a></li>
+                        <li><a href="">Thông Tin </a></li>
+                    </ul>-->
+                </li>
+                <li><button class="js-lib-btn">Phòng Khách</button></li>
+                <li><button class="js-bed-btn">Phòng Ngủ</button></li>
+                <li><button class="js-kit-btn">Phòng Bếp</button></li>
+                <li><button class="js-inf-btn">Hiển Thị </button></li>
+                <li><button class="js-sensor-btn">Cảm Biến </button></li>
+            </ul>
+
+            <!--Begin login-->
+            <div class="login-btn">
+               
+               <div class="account" ><a class="js-login-btn" href="login.html">Đăng nhập</a></div>
+            </div>
+
+        </div>
+
+        <div id="slider">
+            
+        </div>
+        <div class="control js-control">
+
+            <div class="list js-list">
+
+                 <div class="control-close js-control-close">
+
+                   <i class="ti-close"></i>
+                 </div>
+
+                 <div class="device-member">
+                     <a class="icon1">
+                         <img class="pic" id="imglamp1" src="/assets/img/denoff1.jpg">
+                     </a>
+                     
+                     <div class="toggle-button-cover">
+                         <div class="button r" id="button-1">
+                         <input type="checkbox" class="switch-toggle switch-toggle1" />
+                         <div class="knobs"></div>
+                         <div class="layer"></div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="device-member">
+                     <a class="icon1">
+                         <img class="pic" id="imglamp2" src="/assets/img/dennguoff.jpg">
+                     </a>
+            
+                     <div class="toggle-button-cover">
+                         <div class="button r" id="button-1">
+                         <input type="checkbox" class="switch-toggle switch-toggle2" />
+                         <div class="knobs"></div>
+                         <div class="layer"></div>
+                         </div>
+                     </div>
+
+                 </div>
+
+                 <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="imglamp3" src="/assets/img/tivioff.jpg">
+                    </a>
+           
+                    <div class="toggle-button-cover">
+                        <div class="button r" id="button-1">
+                        <input type="checkbox" class="switch-toggle switch-toggle3" />
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="imglamp4" src="/assets/img/dieuhoa.png">
+                    </a>
+           
+                    <div class="toggle-button-cover">
+                        <div class="button r" id="button-1">
+                        <input type="checkbox" class="switch-toggle switch-toggle4" />
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+             </div>
+         </div>
+        <!------------------------------------------------------------->
+        <div class="control-bedroom js-control-bedroom">
+
+            <div class="list-bedroom js-list-bedroom">
+
+                <div class="control-close js-control-close-bed">
+
+                  <i class="ti-close"></i>
+
+                </div>
+
+                <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="imglamp1" src="/assets/img/denoff1.jpg">
+                    </a>
+                    
+                    <div class="toggle-button-cover">
+                        <div class="button r" id="button-1">
+                        <input type="checkbox" class="switch-toggle switch-toggle1" />
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="imglamp2" src="/assets/img/dennguoff.jpg">
+                    </a>
+           
+                    <div class="toggle-button-cover">
+                        <div class="button r" id="button-1">
+                        <input type="checkbox" class="switch-toggle switch-toggle2" />
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="device-member">
+                   <a class="icon1">
+                       <img class="pic" id="imglamp3" src="/assets/img/tivioff.jpg">
+                   </a>
+          
+                   <div class="toggle-button-cover">
+                       <div class="button r" id="button-1">
+                       <input type="checkbox" class="switch-toggle switch-toggle3" />
+                       <div class="knobs"></div>
+                       <div class="layer"></div>
+                       </div>
+                   </div>
+
+               </div>
+
+               <div class="device-member">
+                   <a class="icon1">
+                       <img class="pic" id="imglamp4" src="/assets/img/dieuhoa.png">
+                   </a>
+          
+                   <div class="toggle-button-cover">
+                       <div class="button r" id="button-1">
+                       <input type="checkbox" class="switch-toggle switch-toggle4" />
+                       <div class="knobs"></div>
+                       <div class="layer"></div>
+                       </div>
+                   </div>
+
+               </div>
+
+            </div>
+
+        </div>
+
+        <!----------------------------------------------------------------------->
+        <div class="control-kitchen js-control-kitchen">
+
+            <div class="list-kitchen js-list-kitchen">
+
+                <div class="control-close js-control-close-kit">
+
+                  <i class="ti-close"></i>
+
+                </div>
+
+                <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="imglamp1" src="/assets/img/denoff1.jpg">
+                    </a>
+                    
+                    <div class="toggle-button-cover">
+                        <div class="button r" id="button-1">
+                        <input type="checkbox" class="switch-toggle switch-toggle1" />
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="imglamp2" src="/assets/img/dennguoff.jpg">
+                    </a>
+           
+                    <div class="toggle-button-cover">
+                        <div class="button r" id="button-1">
+                        <input type="checkbox" class="switch-toggle switch-toggle2" />
+                        <div class="knobs"></div>
+                        <div class="layer"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="device-member">
+                   <a class="icon1">
+                       <img class="pic" id="imglamp3" src="/assets/img/tivioff.jpg">
+                   </a>
+          
+                   <div class="toggle-button-cover">
+                       <div class="button r" id="button-1">
+                       <input type="checkbox" class="switch-toggle switch-toggle3" />
+                       <div class="knobs"></div>
+                       <div class="layer"></div>
+                       </div>
+                   </div>
+
+               </div>
+
+               <div class="device-member">
+                   <a class="icon1">
+                       <img class="pic" id="imglamp4" src="/assets/img/dieuhoa.png">
+                   </a>
+          
+                   <div class="toggle-button-cover">
+                       <div class="button r" id="button-1">
+                       <input type="checkbox" class="switch-toggle switch-toggle4" />
+                       <div class="knobs"></div>
+                       <div class="layer"></div>
+                       </div>
+                   </div>
+
+               </div>
+
+            </div>
+
+        </div>
+
+
+         <div class="display js-display">
+
+            <div class="display-device js-display-device">
+
+                 <div class="control-close js-control-close">
+
+                   <i class="ti-close"></i>
+                 </div>
+
+                 <div class="device-member">
+                     <a class="icon1">
+                         <img class="pic" id="temp" src="/assets/img/sensor nhiệt độ.png">
+                     </a>
+                     <div class="name-sensor">Nhiệt Độ:</div>
+                     <div id="tvTemp" class="value-sensor">value</div>
+                 </div>
+
+                 <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="hum" src="/assets/img/doam.jpg">
+                     </a>
+                     <div class="name-sensor">Độ Ẩm:</div>
+                     <div id="tvHumid" class="value-sensor">value</div>
+                 </div>
+
+                </div>
+
+             </div>
+             
+         </div>
+
+
+         <div class="sensor js-sensor">
+
+            <div class="sensor-device js-sensor-device">
+
+                 <div class="control-close js-control-close">
+
+                   <i class="ti-close"></i>
+                 </div>
+
+                 <div class="device-member">
+                     <a class="icon1">
+                         <img class="pic" id="rain" src="/assets/img/rain.gif">
+                     </a>
+                 </div>
+
+                 <div class="device-member">
+                    <a class="icon1">
+                        <img class="pic" id="day" src="/assets/img/moon.gif">
+                     </a>
+                     
+                 </div>
+
+                </div>
+
+             </div>
+             
+         </div>
+
+
+            </div>
+         
+            <script src="../js/main.js"></script>  
+        
+    </body>
+</html>

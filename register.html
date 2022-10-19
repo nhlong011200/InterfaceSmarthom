@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styleRegister.css"> -->
+    <script src="https://kit.fontawesome.com/20350b7c07.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../css/register.css">
+    <!-- jquery library -->
+    <title>Đăng kí tài khoản</title>
+  
+</head>
+<body>
+  
+    <div class="register">
+     
+        <div class="register-classic">
+
+            
+
+            <header class="modal-header">
+                <div class="modal-close js-modal-close">
+                    <i class="ti-close"></i>
+                </div>
+                <h2>ĐĂNG KÍ TÀI KHOẢN </h2>
+            </header>
+
+         <!-- <h2>ĐĂNG KÍ TÀI KHOẢN </h2>-->
+          <div class="doLogin"><a title="" href="login.html">Trở về trang đăng nhập</a></div>
+          <div class="clear"></div>
+          <form action="register" method="post" class="form" id="form-1">
+            <p class="desc"></p>
+            <div class="spacer"></div>
+
+            <div class="form-group">
+                <fieldset class="email">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" name="email" type="email" placeholder="VD: email@gmail.com" class="form-control">
+                    <span class="form-message"></span>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <fieldset class="password">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input id="password" name="password" type="text" placeholder="Mật khẩu" class="form-control">
+                    <span class="form-message"></span>
+                </fieldset>
+            </div>
+
+            <!-- <div class="form-group">
+                <fieldset class="confirm-password">
+                    <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+                    <input id="password_confirmation" name="password_confirmation" type="text" placeholder="Nhập lại mật khẩu" class="form-control">
+                    <span class="form-message"></span>
+                </fieldset>
+            </div> -->
+            
+                <button id="sigUp" type="submit" class="form-submit"> Đăng kí</button>
+          </form>
+        
+        </div>
+      </div>
+      <script src="../js/closeregister.js"></script> 
+      <script src="../js/register.js"></script> 
+      <script>
+        Validator({
+            form: '#form-1',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 6),
+                Validator.isConfirmed('password_confirmation',function(){
+                    return document.querySelector('form-1 #password').value;
+
+                },'Vui lòng nhập giá trị trùng khớp với mật khẩu')
+            ],
+            onsubmit: function (data) {
+                console.log(data);
+             }
+        });
+      </script>
+
+      
+    
+</body>
+
+
+            
+</html>

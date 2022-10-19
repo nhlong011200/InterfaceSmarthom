@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <!-- jquery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Đăng Nhập</title>
+
+  
+</head>
+<body>
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-user"></i>
+                ĐĂNG NHẬP
+            </header>
+
+           <div class="modal-body">
+                
+                <label for="modal-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Email 
+                </label>
+                <input id="modal-email"type="email" class="modal-input" placeholder="Enter email....">
+
+                <label for="modal-password" class="modal-label">
+                    <i class="ti-lock"></i>
+                    Mật Khẩu 
+                </label>
+                <input id="modal-password"type="password" class="modal-input" placeholder="Mật Khẩu....">
+
+                <button id="sigin-btn">
+                    ĐĂNG NHẬP 
+                </button>
+            </div>
+
+            <footer class="modal-footer">
+                <p class="modal-hlep">Bạn chưa có tài khoản? <a href="register.html">Đăng Kí</a></p>
+        <script src="../js/closelogin.js"></script> 
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-analytics.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyC3nL49UW4fwjni2Wk2UOnH2sy8xBOUQrI",
+      authDomain: "esp32-firebase-80d4f.firebaseapp.com",
+      databaseURL: "https://esp32-firebase-80d4f-default-rtdb.firebaseio.com",
+      projectId: "esp32-firebase-80d4f",
+      storageBucket: "esp32-firebase-80d4f.appspot.com",
+      messagingSenderId: "976012416764",
+      appId: "1:976012416764:web:00c2ca3bd96a619bc6a979",
+      measurementId: "G-E4Z62SB8TZ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = firebase.database();
+    const auth = firebase.auth();
+    
+    sigin-btn.addEventListener('click',(e)=>{
+        var email = document.getElementById('modal-email').value;
+        var password = document.getElementById('modal-password').value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+         // Signed in 
+          const user = userCredential.user;
+          alert('Tài Khoản tạo thành công');
+         // ...
+         })
+        .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+
+         alert(errorMessage);
+         // ..
+        });
+    });
+  </script>
+
+</html>
